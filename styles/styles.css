@@ -1,7 +1,10 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 50px;
+    padding: 50px;
 }
 
 
@@ -19,7 +22,7 @@ body {
 
 .box {
 
-    flex: 1 1 auto;
+    
     border-color: black;
     border-width: 1px;
     border-style: solid;
@@ -28,4 +31,11 @@ body {
 
 .hovered {
     background-color: pink;
+}
+
+button {
+
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
 }

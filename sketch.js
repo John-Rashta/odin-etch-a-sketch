@@ -9,7 +9,7 @@ function makeGrid(size) {
     }
 
     //get the pixel per box, remove 2 for the borders and avoid big decimal numbers
-    boxSize = Number(((960 / size) - 2).toFixed(1));
+    const boxSize = Number(((960 / size) - 2).toFixed(1));
 
 
 
@@ -40,7 +40,7 @@ function makeGrid(size) {
 */
     divContainer.addEventListener("mouseover", function (event) {
 
-        overBox = event.target;
+        const overBox = event.target;
 
         if (overBox.classList.contains("box")) overBox.style.backgroundColor = "pink";
     
@@ -48,6 +48,33 @@ function makeGrid(size) {
 
 }
 
+function askSize() {
+
+    let size = prompt("What's the Grid Size? (Max 100)");
+    
+
+    while (!(size = Number(size))) {
+        size = prompt("Input a Number for the Grid.");
+    }
+
+    while (size < 0 || !(Number.isInteger(size))) {
+        size = prompt("Input a positive integer number.");
+    }
+
+    while (size > 100) {
+        size = prompt("Input a number equal or lower than 100.");
+    }
+
+    return size;
+
+   
+
+}
+
+//GET button and make it trigger the grid function to resize
+const gridButton = document.querySelector("button");
+
+gridButton.onclick = () => makeGrid(askSize());
 
 makeGrid(16);
 
