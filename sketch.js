@@ -42,7 +42,11 @@ function makeGrid(size) {
 
         const overBox = event.target;
 
-        if (overBox.classList.contains("box")) overBox.style.backgroundColor = "pink";
+        const colors = [0, 0, 0];
+        colors.forEach((color, index) => colors[index] = Math.floor(Math.random() * 256));
+
+
+        if (overBox.classList.contains("box")) overBox.style.backgroundColor = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
     
     });
 
