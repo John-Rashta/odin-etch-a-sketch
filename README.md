@@ -1,4 +1,4 @@
-CREATE a container in html
-LOOP to make the 16x16 divs
-ADD a new class to them
-ADD the divs to the container (while in the loop)
+Fourth Project for TheOdinProject
+
+Interactive sketch box that changes color when a square is hovered and increases it's
+opacity by 10% every time it happens.
