@@ -25,11 +25,13 @@ body {
     border-color: black;
     border-width: 1px;
     border-style: solid;
+    opacity: 0.1;
 
 }
 
 .hovered {
     background-color: pink;
+    
 }
 
 button {

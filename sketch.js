@@ -1,6 +1,8 @@
+const divContainer = document.querySelector(".container");
+
 function makeGrid(size) {
 
-    const divContainer = document.querySelector(".container");
+    
     
     //clear the grid to avoid overloading
     while(divContainer.firstChild) {
@@ -27,30 +29,30 @@ function makeGrid(size) {
             
         }
     }
-
-    /*
-    const sketchBox = document.querySelectorAll(".box");
-
-    sketchBox.forEach(function (box) {
-        box.addEventListener("mouseover", function() {
-            console.log(box);
-            box.classList.toggle("hovered");
-        })
-    });
-*/
-    divContainer.addEventListener("mouseover", function (event) {
-
-        const overBox = event.target;
-
-        const colors = [0, 0, 0];
-        colors.forEach((color, index) => colors[index] = Math.floor(Math.random() * 256));
-
-
-        if (overBox.classList.contains("box")) overBox.style.backgroundColor = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
-    
-    });
-
 }
+
+//ADD the event to the container so it delegates to the boxes
+divContainer.addEventListener("mouseover", function (event) {
+
+    const overBox = event.target;
+
+    const colors = [0, 0, 0];
+    colors.forEach((color, index) => colors[index] = Math.floor(Math.random() * 256));
+
+
+    if (overBox.classList.contains("box")) {
+        
+        overBox.style.backgroundColor = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
+        
+        if (!(overBox.style.opacity === "1")) {
+
+            overBox.style.opacity = Number(overBox.style.opacity) + 0.1 ;
+        }
+        
+    
+    };
+
+});
 
 function askSize() {
 
