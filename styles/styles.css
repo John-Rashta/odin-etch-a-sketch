@@ -1,6 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .container {
     margin: 0;
+    padding: 0;
     border: solid;
     display: flex;
     flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+    max-width: 960px;
+    max-height: 960px;
+}
+
+.box {
+
+    flex: 1 1 auto;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+
+}
+
+.hovered {
+    background-color: pink;
 }
