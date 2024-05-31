@@ -63,13 +63,10 @@ function askSize() {
         size = prompt("Input a Number for the Grid.");
     }
 
-    while (size < 0 || !(Number.isInteger(size))) {
-        size = prompt("Input a positive integer number.");
+    while (size <= 0 || !(Number.isInteger(size)) || size > 100) {
+        size = Number(prompt("Input a positive integer number between 1 and 100 inclusive."));
     }
 
-    while (size > 100) {
-        size = prompt("Input a number equal or lower than 100.");
-    }
 
     return size;
 
